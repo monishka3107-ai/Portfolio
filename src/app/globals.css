@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens. HSL channels so Tailwind's <alpha-value> works cleanly.
+   Light + dark themes are driven by the `.dark` class (next-themes).
+--------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --background: 240 20% 99%;
+    --foreground: 240 10% 8%;
+    --muted: 240 12% 96%;
+    --muted-foreground: 240 6% 42%;
+    --card: 0 0% 100%;
+    --border: 240 12% 90%;
+    --accent: 246 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .dark {
+    --background: 240 16% 5%;
+    --foreground: 240 10% 96%;
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 8% 62%;
+    --card: 240 14% 8%;
+    --border: 240 10% 18%;
+    --accent: 250 90% 68%;
+    --accent-foreground: 240 16% 6%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Lenis manages scrolling; disable native smooth to avoid double easing. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+
+  /* Accessible, visible focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar — subtle, on-brand. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable component utilities
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Glassy surface used for cards, nav, palette. */
+  .glass {
+    @apply border border-white/10 bg-card/70 backdrop-blur-xl;
+    box-shadow: inset 0 1px 0 0 hsl(0 0% 100% / 0.06);
+  }
+
+  /* Gradient text used for emphasis. */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-fuchsia-500 to-sky-400 bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  /* Thin gradient hairline border for premium feel. */
+  .hairline {
+    background:
+      linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      linear-gradient(135deg, hsl(var(--accent) / 0.4), transparent 40%) border-box;
+    border: 1px solid transparent;
+  }
+
+  .section-pad {
+    @apply py-24 sm:py-28 lg:py-32;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   /neo route — techno-brutalist utilities (scoped, opt-in via classes)
+--------------------------------------------------------------------------- */
+@layer utilities {
+  /* Outlined display text (last-name treatment). */
+  .text-stroke {
+    -webkit-text-stroke: 2px #f48fb1;
+    color: transparent;
+  }
+  @media (min-width: 1024px) {
+    .text-stroke {
+      -webkit-text-stroke: 3px #f48fb1;
+    }
+  }
+  .text-stroke-dim {
+    -webkit-text-stroke: 1.5px hsl(0 0% 100% / 0.14);
+    color: transparent;
+  }
+
+  /* Technical dotted grid used on the neo hero. */
+  .neo-dots {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  /* Custom-cursor: hide the native cursor on fine-pointer devices (the
+     JS cursor draws its own). Text fields keep the native caret cursor. */
+  @media (hover: hover) and (pointer: fine) {
+    html.neo-cursor-none,
+    html.neo-cursor-none * {
+      cursor: none !important;
+    }
+    html.neo-cursor-none input,
+    html.neo-cursor-none textarea,
+    html.neo-cursor-none select {
+      cursor: auto !important;
+    }
+  }
+
+  /* Infinite marquee. */
+  .animate-marquee {
+    animation: neo-marquee 26s linear infinite;
+  }
+  @keyframes neo-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer utilities {
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
