@@ -10,21 +10,48 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
-    id: "ibm-skillsbuild",
-    title: "IBM SkillsBuild",
-    issuer: "IBM",
-    year: "2026",
-    description:
-      "Foundational learning across emerging technologies, professional skills, and applied problem solving.",
-    status: "earned",
-  },
-  {
-    id: "anthropic-claude",
-    title: "Building with Claude",
+    id: "anthropic-claude-101",
+    title: "Claude 101",
     issuer: "Anthropic",
     year: "2026",
     description:
-      "Hands-on certificate exploring how to build thoughtfully with Claude and modern AI tooling.",
+      "Certificate of completion covering the fundamentals of working with Claude — prompting, capabilities, and everyday workflows.",
+    status: "earned",
+  },
+  {
+    id: "anthropic-claude-cowork",
+    title: "Introduction to Claude Cowork",
+    issuer: "Anthropic",
+    year: "2026",
+    description:
+      "Certificate of completion on using Claude Cowork to delegate and collaborate on real tasks with AI.",
+    status: "earned",
+  },
+  {
+    id: "ibm-python-data-science",
+    title: "Python for Data Science",
+    issuer: "IBM",
+    year: "2026",
+    description:
+      "Core Python for data work — data types, control flow, functions, and working with data using libraries like Pandas and NumPy.",
+    status: "earned",
+  },
+  {
+    id: "ibm-python-101-data-science",
+    title: "Python 101 for Data Science",
+    issuer: "IBM",
+    year: "2026",
+    description:
+      "Introductory Python for data science — writing scripts, handling data structures, and reading and analysing data files.",
+    status: "earned",
+  },
+  {
+    id: "ibm-supervised-learning",
+    title: "Supervised Learning Methods",
+    issuer: "IBM",
+    year: "2026",
+    description:
+      "Foundations of supervised machine learning — regression and classification models, training, and evaluating model performance.",
     status: "earned",
   },
   {
