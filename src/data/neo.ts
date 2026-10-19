@@ -43,7 +43,7 @@ export const neoProjects: NeoProject[] = [
       "A study planner that compares your time estimates against how long tasks actually take — so you learn your real pace instead of guessing.",
     github: "https://github.com/monishka3107-ai/paceplanner",
     demo: "https://monishka3107-ai.github.io/paceplanner/",
-    previewImage: "/preview-paceplanner.png",
+    previewImage: "/preview-paceplanner.jpg",
   },
   {
     index: "02",
@@ -53,7 +53,7 @@ export const neoProjects: NeoProject[] = [
       "Compares your current skills against a target role and highlights the highest-impact gaps to close first — an interactive Python + Streamlit app.",
     github: "https://github.com/monishka3107-ai/skill-gap-analyzer",
     demo: "https://monishka3107-ai-skill-gap-analyzer-app-u2c46i.streamlit.app/",
-    previewImage: "/preview-skill-gap.png",
+    previewImage: "/preview-skill-gap.jpg",
   },
   {
     index: "03",
@@ -62,6 +62,7 @@ export const neoProjects: NeoProject[] = [
     description:
       "A voice-first wage and attendance ledger for domestic workers in India — say what happened in Hindi and KarMic keeps the arithmetic across every household.",
     github: "https://github.com/monishka3107-ai/KarMic",
+    previewImage: "/preview-karmic.jpg",
   },
   {
     index: "04",
@@ -71,6 +72,7 @@ export const neoProjects: NeoProject[] = [
       "AI livestock breed identification for Smart India Hackathon 2026 — classifies cattle and buffalo images into their exact breed with EfficientNet-B4.",
     github: "https://github.com/VenomDevX/PashuVision",
     demo: "https://classification-for-cattle-and-buffa.vercel.app",
+    previewImage: "/preview-pashuvision.jpg",
   },
 ];
 

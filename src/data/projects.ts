@@ -11,6 +11,8 @@ export interface Project {
   learnings: string[];
   github?: string;
   demo?: string;
+  /** Screenshot shown at the top of the card (in /public). */
+  image?: string;
   /** Accent gradient for the card. */
   gradient: string;
   featured: boolean;
@@ -38,6 +40,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/monishka3107-ai/paceplanner",
     demo: "https://monishka3107-ai.github.io/paceplanner/",
+    image: "/preview-paceplanner.jpg",
     gradient: "from-sky-500/25 via-blue-500/10 to-transparent",
     featured: true,
   },
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/monishka3107-ai/skill-gap-analyzer",
     demo: "https://monishka3107-ai-skill-gap-analyzer-app-u2c46i.streamlit.app/",
+    image: "/preview-skill-gap.jpg",
     gradient: "from-emerald-500/25 via-teal-500/10 to-transparent",
     featured: true,
   },
@@ -86,6 +90,7 @@ export const projects: Project[] = [
       "That designing for a specific, underserved user changes almost every product decision.",
     ],
     github: "https://github.com/monishka3107-ai/KarMic",
+    image: "/preview-karmic.jpg",
     gradient: "from-amber-500/25 via-orange-500/10 to-transparent",
     featured: true,
   },
@@ -111,6 +116,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/VenomDevX/PashuVision",
     demo: "https://classification-for-cattle-and-buffa.vercel.app",
+    image: "/preview-pashuvision.jpg",
     gradient: "from-rose-500/25 via-pink-500/10 to-transparent",
     featured: true,
   },

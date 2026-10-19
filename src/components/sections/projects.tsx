@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Github,
@@ -67,6 +68,17 @@ function ProjectCard({ project }: { project: Project }) {
         )}
         aria-hidden
       />
+      {project.image && (
+        <div className="relative aspect-[16/9] overflow-hidden border-b border-border sm:aspect-[5/2]">
+          <Image
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-top"
+          />
+        </div>
+      )}
       <div className="relative p-6 sm:p-8">
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4">
