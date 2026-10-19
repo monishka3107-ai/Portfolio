@@ -65,4 +65,53 @@ export const projects: Project[] = [
     gradient: "from-emerald-500/25 via-teal-500/10 to-transparent",
     featured: true,
   },
+  {
+    id: "karmic",
+    title: "KarMic",
+    tagline: "Your work, your account — a voice-first wage ledger",
+    year: "2026",
+    status: "Prototype",
+    overview:
+      "KarMic is a voice-first wage and attendance ledger for domestic workers in India. A worker says what happened, in Hindi, out loud — \"Sharma ji ke ghar 20 din kaam kiya, 2000 mile\" — and KarMic splits it into work, payments, advances and leave, then keeps the running balance for every household she works in.",
+    problem:
+      "Domestic workers often juggle three to six households, each with its own wage, pay date, working days, advances and leave — all tracked in their heads. That is how disputes start and wages go unpaid. KarMic does the bookkeeping and can explain exactly how every amount was calculated.",
+    stack: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Web Speech API", "LLM", "PWA"],
+    challenges: [
+      "Turning free-form spoken Hindi/Hinglish into structured ledger entries without guessing — unknown households trigger a question instead of a silent assumption.",
+      "Designing for low-literacy users: one big mic button, Hindi-first UI, and a confirmation screen that quotes the worker's own words back before anything is saved.",
+      "Keeping the whole app working offline with a mock LLM mode and a rule-based fallback extractor.",
+    ],
+    learnings: [
+      "How to use an LLM for extraction only, while keeping all money arithmetic deterministic and explainable.",
+      "That designing for a specific, underserved user changes almost every product decision.",
+    ],
+    github: "https://github.com/monishka3107-ai/KarMic",
+    gradient: "from-amber-500/25 via-orange-500/10 to-transparent",
+    featured: true,
+  },
+  {
+    id: "pashuvision",
+    title: "PashuVision",
+    tagline: "AI livestock breed identification for SIH 2026",
+    year: "2026",
+    status: "Live",
+    overview:
+      "PashuVision is an AI-powered system that classifies images of cattle and buffalo into their exact breed. Built for Smart India Hackathon 2026, it pairs a species router (cattle vs buffalo) with breed classifiers, served through a Flask web app.",
+    problem:
+      "Accurate breed identification matters for livestock records, breeding programs and government schemes, but it usually depends on expert inspection. PashuVision lets anyone get a breed prediction from a single photo.",
+    stack: ["Python", "PyTorch", "EfficientNet-B4", "YOLOv8", "Flask", "TypeScript"],
+    challenges: [
+      "Imbalanced breed data — solved with augmentation until every breed reached 350 images.",
+      "Background bias from grass, fences and people — solved by cropping the animal out with YOLOv8 before training.",
+      "Training a large EfficientNet-B4 model efficiently using mixed precision and cosine annealing.",
+    ],
+    learnings: [
+      "How much data preparation drives model accuracy compared with architecture choice.",
+      "Building and shipping an end-to-end ML pipeline as a team under hackathon deadlines.",
+    ],
+    github: "https://github.com/VenomDevX/PashuVision",
+    demo: "https://classification-for-cattle-and-buffa.vercel.app",
+    gradient: "from-rose-500/25 via-pink-500/10 to-transparent",
+    featured: true,
+  },
 ];

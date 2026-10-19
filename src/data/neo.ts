@@ -57,11 +57,20 @@ export const neoProjects: NeoProject[] = [
   },
   {
     index: "03",
-    title: "Telco Churn Analysis",
-    tags: ["SQL Server", "Power BI", "Excel"],
+    title: "KarMic",
+    tags: ["React", "FastAPI", "Speech", "LLM"],
     description:
-      "Telecom churn analysis on 7,043 customers using SQL Server, Power BI & Excel — surfacing key churn drivers and building retention dashboards.",
-    github: "https://github.com/monishka3107-ai/TELCO-CHURN-ANALYSIS",
+      "A voice-first wage and attendance ledger for domestic workers in India — say what happened in Hindi and KarMic keeps the arithmetic across every household.",
+    github: "https://github.com/monishka3107-ai/KarMic",
+  },
+  {
+    index: "04",
+    title: "PashuVision",
+    tags: ["Python", "PyTorch", "YOLOv8", "Flask"],
+    description:
+      "AI livestock breed identification for Smart India Hackathon 2026 — classifies cattle and buffalo images into their exact breed with EfficientNet-B4.",
+    github: "https://github.com/VenomDevX/PashuVision",
+    demo: "https://classification-for-cattle-and-buffa.vercel.app",
   },
 ];
 
